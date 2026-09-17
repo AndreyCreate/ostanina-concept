@@ -1,3 +1,533 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Концепт сайта — собирается</title>
-<style>body{font-family:Inter,system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;background:#fff;color:#111}div{max-width:520px;padding:32px;text-align:center}a{color:#2F80ED}</style></head>
-<body><div><h1 style="font-weight:500;letter-spacing:-.03em">Новый сайт собирается</h1><p>Концепт к разбору блога Алёны Останиной появится здесь в течение часа. Пока — <a href="bylo-stalo/">страница «было → стало»</a>.</p></div></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Алёна Останина — стратегический коуч</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F3ED;
+  --paper-2:#EFE8DE;
+  --ink:#1C1916;
+  --ink-soft:#5E554B;
+  --line:#DCD2C4;
+  --accent:#B0703A;
+  --dark:#14120F;
+  --dark-ink:#F3EDE4;
+  --dark-soft:#B2A798;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --gut:22px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+section{padding:38px 0}
+
+/* ---------- служебная плашка ---------- */
+.concept-bar{
+  background:var(--dark);color:var(--dark-soft);
+  font-size:10.5px;line-height:1.45;letter-spacing:.03em;
+  padding:8px 16px;text-align:center;
+}
+.concept-bar a{color:#E4D9C8;text-decoration:underline;text-underline-offset:2px}
+
+/* ---------- типографика ---------- */
+h1,h2,h3,.needs li,.pullquote,.case__text,.how__t,.how__num,.price__fig,.band__cap{
+  font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'onum' 0;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.005em}
+h1{font-size:clamp(29px,7.6vw,58px);line-height:1.12}
+h2{font-size:clamp(25px,6.2vw,42px);line-height:1.17}
+h3{font-size:clamp(20px,4.6vw,26px);line-height:1.28}
+.lead{font-size:16px;line-height:1.6;color:var(--ink-soft)}
+.eyebrow{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:12px;
+}
+.rule{width:52px;height:1px;background:var(--accent);margin:16px 0}
+
+/* ---------- кнопка ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--dark);color:#F7F3ED;text-decoration:none;
+  font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.01em;
+  padding:15px 24px;border-radius:2px;line-height:1.3;text-align:center;
+  transition:background .2s ease;
+}
+.btn:hover{background:#2C2722}
+.btn--light{background:#F7F3ED;color:var(--dark)}
+.btn--light:hover{background:#fff}
+.btn-note{font-size:12.5px;color:var(--ink-soft);margin-top:11px}
+
+/* ---------- 1. первый экран ---------- */
+.hero{padding:0 0 38px}
+.hero__img{
+  position:relative;width:auto;aspect-ratio:16/9;overflow:hidden;background:#2A2A24;
+  margin:0 calc(var(--gut) * -1);
+}
+.hero__img img{width:100%;height:100%;object-fit:cover;object-position:54% 34%}
+.hero__body{padding-top:26px}
+.hero__name{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:16px;
+}
+.hero h1{margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero__sub{font-size:16px;line-height:1.58;color:var(--ink-soft);max-width:34em}
+.hero__sub b{color:var(--ink);font-weight:500}
+.hero__cta{margin-top:24px}
+
+/* ---------- 2. с чем приходят ---------- */
+.needs{background:var(--paper-2)}
+.needs ul{list-style:none;margin:20px 0 0;padding:0}
+.needs li{
+  font-family:var(--serif);font-size:clamp(19px,4.6vw,24px);line-height:1.3;
+  padding:12px 0 12px 26px;border-top:1px solid var(--line);position:relative;
+}
+.needs li:last-child{border-bottom:1px solid var(--line)}
+.needs li::before{
+  content:'';position:absolute;left:2px;top:.86em;
+  width:10px;height:1px;background:var(--accent);
+}
+.pullquote{
+  margin:24px 0 0;padding:22px 20px;background:var(--dark);color:var(--dark-ink);
+  font-family:var(--serif);font-size:clamp(18px,4.4vw,23px);line-height:1.34;
+}
+.pullquote cite{
+  display:block;margin-top:10px;font-family:var(--sans);font-style:normal;
+  font-size:12px;letter-spacing:.06em;color:var(--dark-soft);
+}
+
+/* ---------- 3. кейсы ---------- */
+.cases .case{
+  background:#fff;border:1px solid var(--line);padding:20px 18px;
+  display:flex;flex-direction:column;
+}
+.case__text{flex:1}
+.case__tag{
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:9px;
+}
+.case__text{
+  font-family:var(--serif);font-size:clamp(18px,4.3vw,22px);line-height:1.38;margin:0 0 14px;
+}
+.case__text b{font-weight:600;background:linear-gradient(transparent 62%,rgba(176,112,58,.22) 62%)}
+.note{
+  margin-top:22px;padding:18px 20px;background:var(--paper-2);
+  font-size:14.5px;line-height:1.58;color:var(--ink-soft);
+}
+.note b{color:var(--ink);font-weight:500}
+.src{font-size:12.5px;color:#8B8176;margin-top:14px;line-height:1.5}
+
+/* ---------- 4. как устроена работа ---------- */
+.how{background:var(--dark);color:var(--dark-ink)}
+.how h2{color:var(--dark-ink)}
+.how .eyebrow{color:#C98C52}
+.how .rule{background:#C98C52}
+.how__steps{margin-top:22px;counter-reset:s}
+.how__step{
+  border-top:1px solid rgba(243,237,228,.16);padding:15px 0;
+  display:grid;grid-template-columns:30px 1fr;gap:4px 12px;
+}
+.how__step:last-child{border-bottom:1px solid rgba(243,237,228,.16)}
+.how__num{
+  font-family:var(--serif);font-size:22px;line-height:1.1;color:#C98C52;
+  grid-row:span 2;padding-top:3px;
+}
+.how__t{font-family:var(--serif);font-size:clamp(18px,4.2vw,22px);line-height:1.28}
+.how__d{font-size:14.5px;line-height:1.55;color:var(--dark-soft)}
+.how__meet{
+  margin-top:22px;padding:18px 20px;background:rgba(243,237,228,.07);
+  font-size:15px;line-height:1.58;color:var(--dark-ink);
+}
+.how__meet b{font-weight:500}
+
+/* ---------- 5. цены ---------- */
+.prices__grid,.reviews__grid,.cases__grid{
+  display:flex;gap:12px;margin:22px calc(var(--gut) * -1) 0;
+  padding:2px var(--gut) 14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.prices__grid::-webkit-scrollbar,.reviews__grid::-webkit-scrollbar,.cases__grid::-webkit-scrollbar{display:none}
+.prices__grid > *,.reviews__grid > *,.cases__grid > *{
+  flex:0 0 82%;scroll-snap-align:start;
+}
+.swipe-hint{
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:#8B8176;margin-top:2px;
+}
+.price{
+  background:#fff;border:1px solid var(--line);padding:20px 18px 18px;
+  display:flex;flex-direction:column;
+}
+.price--main{border-color:var(--accent);border-width:1.5px}
+.price__badge{
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  font-weight:600;margin-bottom:9px;
+}
+.price h3{margin-bottom:7px}
+.price__desc{font-size:14px;line-height:1.5;color:var(--ink-soft);flex:1}
+.price__fig{
+  font-family:var(--serif);font-size:clamp(26px,6.2vw,33px);line-height:1.1;
+  margin-top:14px;padding-top:13px;border-top:1px solid var(--line);
+}
+.price__fig span{font-size:.62em;color:var(--ink-soft)}
+.price__per{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+.prices__extra{
+  margin-top:16px;font-size:13.5px;line-height:1.6;color:var(--ink-soft);
+}
+.prices__extra b{color:var(--ink);font-weight:500}
+
+/* ---------- фото-разделитель ---------- */
+.band{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#2A2A24}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.band__cap{
+  position:absolute;left:0;right:0;top:0;padding:22px var(--gut) 46px;
+  background:linear-gradient(rgba(20,18,15,.86),rgba(20,18,15,.6) 46%,transparent);
+  color:#F3EDE4;font-family:var(--serif);font-size:clamp(19px,4.6vw,27px);line-height:1.28;
+}
+
+/* ---------- 6. отзывы ---------- */
+.reviews{background:var(--paper-2)}
+.review{
+  background:#fff;padding:20px 18px;margin:0;border:1px solid var(--line);
+  display:flex;flex-direction:column;
+}
+.review p{flex:1}
+.review p{margin:0;font-size:14.8px;line-height:1.58}
+.review footer{
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:13px;line-height:1.45;
+}
+.review footer b{font-weight:600;display:block}
+.review footer span{color:var(--ink-soft)}
+
+/* ---------- 7. кто я ---------- */
+.about__photo{margin:0 calc(var(--gut) * -1) 26px;aspect-ratio:5/4;overflow:hidden}
+.about__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+.about__facts{list-style:none;margin:18px 0 0;padding:0}
+.about__facts li{
+  padding:11px 0;border-top:1px solid var(--line);
+  font-size:15px;line-height:1.55;
+}
+.about__facts li:last-child{border-bottom:1px solid var(--line)}
+.about__facts b{font-weight:600}
+
+/* ---------- 8. финал ---------- */
+.final{background:var(--dark);color:var(--dark-ink);text-align:center}
+.final h2{color:var(--dark-ink);margin-bottom:14px}
+.final p{font-size:16px;line-height:1.6;color:var(--dark-soft);margin:0 auto 24px;max-width:26em}
+.final .btn{width:100%;max-width:400px}
+.final__ig{
+  display:inline-block;margin-top:22px;font-size:13.5px;color:var(--dark-soft);
+  text-decoration:none;border-bottom:1px solid rgba(178,167,152,.45);padding-bottom:2px;
+}
+
+/* ---------- футер ---------- */
+footer.site{
+  background:#0E0D0B;color:#857C70;font-size:12px;line-height:1.6;
+  padding:24px 0 30px;
+}
+footer.site a{color:#B5A894}
+footer.site p{margin:0 0 9px}
+footer.site p:last-child{margin-bottom:0}
+
+/* ---------- десктоп ---------- */
+@media (min-width:860px){
+  :root{--gut:56px}
+  section{padding:96px 0}
+  .hero{padding:0 0 96px}
+  .hero__inner{display:grid;grid-template-columns:1.06fr .94fr;gap:0;align-items:stretch}
+  .hero__img{aspect-ratio:auto;height:100%;min-height:560px;order:2;margin:0}
+  .hero__body{order:1;padding:84px 56px 84px 0;display:flex;flex-direction:column;justify-content:center}
+  .hero .wrap{max-width:none;padding-right:0;padding-left:clamp(56px,calc((100vw - 1120px)/2 + 56px),320px)}
+  .needs ul{columns:2;column-gap:44px}
+  .needs li{break-inside:avoid}
+  .pullquote{padding:40px 44px;max-width:30em}
+  .cases__grid{grid-template-columns:repeat(3,1fr);gap:22px}
+  .how__steps{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+  .prices__grid,.reviews__grid,.cases__grid{
+    display:grid;overflow:visible;margin:30px 0 0;padding:0;
+  }
+  .prices__grid{grid-template-columns:repeat(3,1fr);gap:22px}
+  .prices__grid > *,.reviews__grid > *,.cases__grid > *{flex:initial}
+  .swipe-hint{display:none}
+  .band{aspect-ratio:auto;height:540px;display:grid;grid-template-columns:44% 56%}
+  .band img{order:2;object-position:50% 64%}
+  .band__cap{
+    position:static;order:1;background:var(--dark);
+    display:flex;align-items:center;
+    padding:48px 56px;font-size:clamp(26px,2.4vw,34px);line-height:1.26;
+  }
+  .reviews__grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .about__inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+  .about__photo{margin:0;aspect-ratio:4/5}
+  .final p{font-size:18px}
+}
+@media (min-width:1180px){
+  .hero h1{font-size:60px}
+}
+</style>
+</head>
+<body>
+
+<div class="concept-bar">
+  Концепт к разбору блога · подготовил Андрей Андреев, сентябрь 2026 · не является официальным сайтом Алёны Останиной.
+  Официальный сайт: <a href="https://taktika-project.ru/alyonaostanina" target="_blank" rel="noopener">taktika-project.ru/alyonaostanina</a>
+</div>
+
+<!-- 1. ПЕРВЫЙ ЭКРАН -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero__inner">
+      <div class="hero__img">
+        <img src="assets/hero.jpg" alt="Алёна Останина" width="1200" height="800">
+      </div>
+      <div class="hero__body">
+        <div class="hero__name">Алёна Останина · стратегический коуч PCC ICF</div>
+        <h1>Больше денег <em>и</em> больше свободного времени. Масштабировать бизнес <em>и</em> быть рядом с детьми.</h1>
+        <p class="hero__sub">
+          Пока эти желания внутри спорят между собой, вы теряете энергию и фокус.
+          <b>За две встречи собираем вашу стратегию</b> — с целями, приоритетами и шагами, которые вы начинаете делать сразу.
+        </p>
+        <div class="hero__cta">
+          <a class="btn" href="https://t.me/Alyona_Ostanina?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener">Написать слово СТРАТЕГИЯ в Telegram</a>
+          <div class="btn-note">Отвечаю сама. Начинаем со встречи-знакомства.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 2. С ЧЕМ ПРИХОДЯТ -->
+<section class="needs">
+  <div class="wrap">
+    <div class="eyebrow">С чем приходят</div>
+    <h2>Ко мне приходят, когда хочется</h2>
+    <ul>
+      <li>перестроить стратегию жизни или бизнеса</li>
+      <li>двигаться без внутренней борьбы и самосаботажа</li>
+      <li>вернуть фокус и энергию</li>
+      <li>выйти на новый уровень дохода или проекта</li>
+      <li>создать систему принятия решений, которая работает</li>
+      <li>прожить переход: запуск, масштабирование, смена роли, выход из выгорания</li>
+    </ul>
+    <blockquote class="pullquote">
+      «…На новый масштаб сложно зайти на старых стратегиях. Те самые „я сам“ и „вывезу на контроле“ довели до этого уровня, но дальше не продвигают».
+      <cite>Алёна Останина</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 3. КЕЙСЫ -->
+<section class="cases">
+  <div class="wrap">
+    <div class="eyebrow">Кейсы</div>
+    <h2>Что было после сессий</h2>
+    <div class="rule"></div>
+    <p class="lead" style="max-width:34em">Алёна записала это сама, на эмоциях после сессий. Дословно, как у неё.</p>
+
+    <div class="cases__grid">
+      <article class="case">
+        <div class="case__tag">Онлайн-школа</div>
+        <p class="case__text">«Ее онлайн-школа сделала <b>рекордные продажи в истории существования за месяц, более 10 млн</b>. Вижу, что это уже следствие, бонусы большой внутренней работы. Счастлива сопровождать».</p>
+      </article>
+
+      <article class="case">
+        <div class="case__tag">Стартап</div>
+        <p class="case__text">«Его гипотеза в стартапе провалилась. Можно было уйти в депрессию, а на сессии оказалось, что <b>это не карма, а вполне логичный путь</b>, вернулся на „рельсы“, уперто идет дальше».</p>
+      </article>
+
+      <article class="case">
+        <div class="case__tag">Лондон</div>
+        <p class="case__text">«Два года назад она устраивалась в компанию в Лондоне, работали над адаптацией. Снова работаем, и <b>она готова уволиться или просить наилучших условий</b>, потому что силы раз в 10 больше и самоценности».</p>
+      </article>
+    </div>
+
+    <p class="swipe-hint">Листайте вбок →</p>
+
+    <div class="note">
+      <b>И честная оговорка — тоже её словами:</b> «А еще может ничего не происходить внешне, но очень много происходить внутри. И это будет в тысячу раз ценнее внешних результатов. Они просто следствие, награда за труд внутри».
+    </div>
+    <p class="src">Источник: записи Алёны в актуальном «КОУЧИНГ» в её Instagram.</p>
+  </div>
+</section>
+
+<!-- 4. КАК УСТРОЕНА РАБОТА -->
+<section class="how">
+  <div class="wrap">
+    <div class="eyebrow">Как устроена работа</div>
+    <h2>Стратегическая сессия — это две встречи</h2>
+    <div class="rule"></div>
+
+    <div class="how__steps">
+      <div class="how__step">
+        <div class="how__num">1</div>
+        <div class="how__t">Анкета до встречи</div>
+        <div class="how__d">Вы отвечаете на вопросы заранее, чтобы первая встреча началась не с нуля.</div>
+      </div>
+      <div class="how__step">
+        <div class="how__num">2</div>
+        <div class="how__t">Первая встреча, 1,5–2 часа</div>
+        <div class="how__d">Ясность в целях, опорные ориентиры, ключевые решения и понятный набор тактических шагов на выбранный период — без перегруза и перфекционизма.</div>
+      </div>
+      <div class="how__step">
+        <div class="how__num">3</div>
+        <div class="how__t">Домашняя работа</div>
+        <div class="how__d">Две недели вы живёте с решениями и проверяете их в деле.</div>
+      </div>
+      <div class="how__step">
+        <div class="how__num">4</div>
+        <div class="how__t">Вторая встреча, 1 час</div>
+        <div class="how__d">Прорабатываем тактику для внедрения и удержания в жизни. Вы принимаете ключевые решения и начинаете действовать по-новому.</div>
+      </div>
+    </div>
+
+    <div class="how__meet">
+      <b>«Контакт всегда начинается со встречи-знакомства».</b><br>
+      Смотрим, ваша это задача и мой ли это формат. На выходе из двух встреч — документированная стратегия и тактические действия, которые вы начинаете реализовывать сразу.
+    </div>
+  </div>
+</section>
+
+<!-- ФОТО-РАЗДЕЛИТЕЛЬ -->
+<div class="band">
+  <img src="assets/portrait-water.jpg" alt="Алёна Останина" width="900" height="1021">
+  <div class="band__cap">«Человек, который понимает себя, может позволить себе большее».</div>
+</div>
+
+<!-- 5. ФОРМАТЫ И ЦЕНЫ -->
+<section class="prices">
+  <div class="wrap">
+    <div class="eyebrow">Форматы и цены</div>
+    <h2>Три способа работать вместе</h2>
+    <div class="rule"></div>
+
+    <div class="prices__grid">
+      <div class="price price--main">
+        <div class="price__badge">Разово</div>
+        <h3>Личная стратегическая сессия</h3>
+        <p class="price__desc">Две встречи. Вы получаете ясную картину и продолжаете движение сами.</p>
+        <div class="price__fig">30 000 ₽ <span>/ 300 €</span></div>
+        <div class="price__per">за обе встречи</div>
+      </div>
+
+      <div class="price">
+        <div class="price__badge">Сопровождение</div>
+        <h3>Контракт на 3 месяца</h3>
+        <p class="price__desc">12 сессий. Двигаемся в партнёрстве: стратегический слой и то, что тормозит внутри.</p>
+        <div class="price__fig">40 000 ₽ <span>/ 400 €</span></div>
+        <div class="price__per">в месяц</div>
+      </div>
+
+      <div class="price">
+        <div class="price__badge">Среда</div>
+        <h3>Клуб «Стратеги»</h3>
+        <p class="price__desc">Сообщество людей, которые живут свою жизнь целенаправленно и хотят делать это не в одиночку.</p>
+        <div class="price__fig">4 500 ₽ <span>/ 50 €</span></div>
+        <div class="price__per">в месяц</div>
+      </div>
+    </div>
+
+    <p class="swipe-hint">Листайте вбок →</p>
+
+    <p class="prices__extra">
+      <b>Краткосрочный контракт</b> — 4 сессии в месяц, 10 000 ₽ / 100 € за сессию.
+      <b>Теневое сопровождение</b> — обсуждается индивидуально, от 1 000 €.
+    </p>
+  </div>
+</section>
+
+<!-- 6. ОТЗЫВЫ -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="eyebrow">Отзывы</div>
+    <h2>Что говорят клиенты</h2>
+    <div class="rule"></div>
+
+    <div class="reviews__grid">
+      <blockquote class="review">
+        <p>«…За час Алена не дала мне ни одного совета, она только задавала правильные вопросы. Мы провели 5 часовых сессий. Буду честен, я не полетел после на сверхзвуковой ракете к звезде своего успеха. Но я стал лучше понимать себя, мотивы. …Инсайты, рожденные во время сессий с ней, точно окупили себя».</p>
+        <footer><b>Артем Емельянов</b><span>предприниматель, Пермь</span></footer>
+      </blockquote>
+
+      <blockquote class="review">
+        <p>«…Я представляла себе коуча, либо как психолога, либо как мотиватора с призывами „эге-ге-гей, полный вперёд!“. В действительности Алёна задаёт вопросы. Иногда неудобные, иногда сложные. Такие, какие сами себе мы задавать редко решаемся. Но именно ответы на них — и есть решения. …Это система. С каждой сессии я уходила с выводом. Из недели в неделю чувствовала прогресс».</p>
+        <footer><b>Вера Мошко</b><span>копирайтер, Киев</span></footer>
+      </blockquote>
+
+      <blockquote class="review">
+        <p>«…После пары сессий на очень глубокие темы без всякой терапии разрешил очень важные для себя внутренние конфликты. И это позволило легко сдвинуться с мёртвой точки и получить то, чего давно хотел. …Уверен, что клиенты Алёны добьются всех желаемых результатов. Причём действительно желаемых, а не поверхностных и социально приемлемых».</p>
+        <footer><b>Алексей Опанасенко</b><span>коуч, тренер. Киев</span></footer>
+      </blockquote>
+
+      <blockquote class="review">
+        <p>«Наши сессии проходят уже более полугода и очень ценно когда квалификация коуча растёт вместе с твоими успехами в бизнесе! Алёна очень грамотный и целеустремленный человек. Если вы хотите развить себя и свой бизнес, Вам к Алёне!!!»</p>
+        <footer><b>Никита Болотов</b><span>предприниматель, Город Чайковский</span></footer>
+      </blockquote>
+    </div>
+    <p class="swipe-hint">Листайте вбок →</p>
+    <p class="src">Отзывы люди публиковали сами — они лежат в актуальном «Отзывы» в профиле Алёны.</p>
+  </div>
+</section>
+
+<!-- 7. КТО Я -->
+<section class="about">
+  <div class="wrap">
+    <div class="about__inner">
+      <div class="about__photo">
+        <img src="assets/portrait-bw.jpg" alt="Алёна Останина" width="900" height="1021">
+      </div>
+      <div>
+        <div class="eyebrow">Кто я</div>
+        <h2>Алёна Останина</h2>
+        <div class="rule"></div>
+        <p class="lead">Стратегический коуч PCC ICF и практик IFS. Восемь лет в коучинге, больше тринадцати — в фасилитации. И я предприниматель: сама строю бизнес и понимаю вызовы тех, с кем работаю.</p>
+        <ul class="about__facts">
+          <li><b>Сертификация ICF, уровень PCC</b> — по стандартам Международной федерации коучинга.</li>
+          <li><b>2 000 часов частной практики</b>, в том числе с руководителями из Google, Яндекс, Estée Lauder.</li>
+          <li><b>Как фасилитатор</b> работала с РЖД, издательством МИФ, Сбербанком, РУСАЛом.</li>
+          <li><b>Лиссабон, 2023.</b> Переехала и с партнёрами открыла здесь частную школу. Трое детей.</li>
+          <li><b>Переплыла Босфор.</b> Пошла в группу к триатлетам и с нуля научилась плавать кролем.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ФИНАЛ -->
+<section class="final">
+  <div class="wrap">
+    <h2>Готовы к новому этапу?</h2>
+    <p>Напишите одно слово — я пойму, зачем вы пришли, и отвечу сама.</p>
+    <a class="btn btn--light" href="https://t.me/Alyona_Ostanina?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener">Написать слово СТРАТЕГИЯ в Telegram</a>
+    <div>
+      <a class="final__ig" href="https://www.instagram.com/alyona_ostanina/" target="_blank" rel="noopener">Instagram @alyona_ostanina</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Концепт к разбору блога · подготовил Андрей Андреев, сентябрь 2026 · не является официальным сайтом Алёны Останиной. Официальный сайт: <a href="https://taktika-project.ru/alyonaostanina" target="_blank" rel="noopener">taktika-project.ru/alyonaostanina</a></p>
+    <p>Оферта и политика — на официальном сайте.</p>
+    <p>Фотографии и цитаты взяты из публичного Instagram Алёны Останиной и с её сайта.</p>
+  </div>
+</footer>
+
+</body>
+</html>
