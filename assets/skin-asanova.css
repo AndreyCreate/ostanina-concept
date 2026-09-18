@@ -39,3 +39,11 @@ h2{font-size:clamp(30px,6.4vw,54px);line-height:1.08}
   .how,.between,.enter{margin:0 28px;border-radius:32px}
 }
 @media(min-width:900px){.hero__img{margin-top:28px;margin-right:28px}}
+/* кружок за курсором, как на референсе */
+.cb{position:fixed;left:0;top:0;z-index:150;pointer-events:none;opacity:0;transition:opacity .3s;will-change:transform}
+.cb.on{opacity:1}
+.cb i{position:absolute;left:-24px;top:-24px;width:48px;height:48px;border-radius:50%;background:#A0C4F9;transform:scale(.22);transition:transform .3s cubic-bezier(.2,.9,.3,1),opacity .3s,background .3s}
+.cb.link i{transform:scale(1.15);opacity:.45}
+.cb.text i{transform:scale(1.9);opacity:.28}
+.cb.down i{transform:scale(.6);opacity:.6}
+.cb.dark i{background:#fff}
