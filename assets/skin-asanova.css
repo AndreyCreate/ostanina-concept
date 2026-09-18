@@ -47,3 +47,13 @@ h2{font-size:clamp(30px,6.4vw,54px);line-height:1.08}
 .cb.text i{transform:scale(1.9);opacity:.28}
 .cb.down i{transform:scale(.6);opacity:.6}
 .cb.dark i{background:#fff}
+
+/* вставка с рилсами */
+.reels__grid{display:flex;gap:18px;margin:26px calc(var(--gut) * -1) 0;padding:4px var(--gut) 16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.reels__grid::-webkit-scrollbar{display:none}
+.reel{flex:0 0 min(78vw,328px);scroll-snap-align:start;margin:0;background:#fff;border-radius:24px;box-shadow:0 10px 40px rgba(90,120,170,.12);overflow:hidden;display:flex;flex-direction:column}
+.reel__frame{position:relative;width:100%;aspect-ratio:328/585;background:#EAF2FF}
+.reel__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.reel figcaption{padding:18px 20px 20px}.reel figcaption p{margin:6px 0 12px;font-size:15px;line-height:1.5}
+.reel figcaption a{color:#6BA0F2;text-decoration:none;font-size:14px}
+@media(min-width:900px){.reels__grid{overflow:visible;margin:30px 0 0;padding:0;justify-content:space-between}.reel{flex:0 0 calc((100% - 44px)/3)}}
